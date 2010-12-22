@@ -6,7 +6,7 @@
             {% if page_obj.has_previous %}
                 <p>&larr; <a href="{% url photos-list page=page_obj.previous_page_number %}">Mladší cypi</a></p>
             {% else %}
-                <p>&larr; Mladší cypi</p>
+                <p class="no-link">&larr; Mladší cypi</p>
             {% endif %}
         </div>
     {% endif %}
@@ -26,7 +26,7 @@
             {% if page_obj.has_next %}
                 <p><a href="{% url photos-list page=page_obj.next_page_number %}">Starší cypi</a> &rarr;</p>
             {% else %}
-                <p>Starší cypi &rarr;</p>
+                <p class="no-link">Starší cypi &rarr;</p>
             {% endif %}
         {% endif %}
     </div>

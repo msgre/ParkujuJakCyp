@@ -4,17 +4,26 @@
 
 {% block main %}
     {# formik #}
-    <div class="grid_6">
+    <div class="grid_4">
         <form enctype="multipart/form-data" method="post" action="{% url homepage %}">
             {% csrf_token %}
             {{ form.as_p }}
             <input type="submit" value="Nahrat" />
+
+            <p class="small">Prosba: fotku před uploadem lehulinko uprav &mdash; nechceme
+            na nich žádné tváře, nebo SPZetky.  Stačí cypova kára.</p>
         </form>
     </div>
 
     {# uvodni pokec #}
-    <div class="grid_6">
-        <p>{% lorem 50 w %}</p>
+    <div class="grid_8">
+        <p><strong>Je úplně jedno, jestli autem jezdíte nebo ne. Dříve nebo později
+        narazíte na cypa, který svůj vůz bravurně usadí mezi dvě až tři parkovací
+        místa, uzme jediný flek pro vozíčkáře nebo vodotěsně zatarasí výjezd z
+        chodníku.</strong></p>
+
+        <p>A právě jim (ale taky nám všem ostatním) je věnován tento web. Užívejte do
+        syta.</p>
     </div>
     <div class="clear"></div>
 

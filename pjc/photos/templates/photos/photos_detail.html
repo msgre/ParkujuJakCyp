@@ -1,10 +1,15 @@
 {% extends "bone.html" %}
 
-{% load thumbnail %}
+{% load thumbnail photos %}
+
+{% block title %}
+    {% czech_month object %} cyp #{{ object.id }} | {{ block.super }}
+{% endblock %}
 
 {% block main %}
     {# detailni fotka #}
     <div class="grid_12">
+        <h2><span title="Rok {{ object.created.year }}">{% czech_month object %}</span> cyp #{{ object.id }}</h2>
         {% thumbnail object.photo "940" as im %}
             <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" />
         {% endthumbnail %}

@@ -8,6 +8,7 @@
         <link rel="stylesheet" href="{{ MEDIA_URL }}css/reset.css" />
         <link rel="stylesheet" href="{{ MEDIA_URL }}css/text.css" />
         <link rel="stylesheet" href="{{ MEDIA_URL }}css/960.css" />
+        <link rel="stylesheet" href="{{ MEDIA_URL }}css/custom.css" />
     </head>
     <body>
         <div class="container_12">
@@ -34,10 +35,15 @@
 
             {# paticka #}
             <hr />
-            <div class="grid_12">
+            <div class="grid_6">
                 <p>
-                    <a href="{% url photos-list page=1 %}">Ultimátní galerie cypů</a> |
-                    <a href="{% url proc %}">Proč</a>
+                    <a href="{% url photos-list page=1 %}">Elitní galerie cypů</a> |
+                    <a href="{% url proc %}">Proč?</a>
+                </p>
+            </div>
+            <div class="grid_6">
+                <p class="right">
+                    Věnováno oktanovému Jiřímu a benzenové Ditě. Od Ježíška.
                 </p>
             </div>
             <div class="clear"></div>
