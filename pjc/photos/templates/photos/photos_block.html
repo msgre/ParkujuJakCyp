@@ -1,0 +1,38 @@
+{% load thumbnail %}
+
+{% if object_list %}
+    {% if not homepage %}
+        <div class="grid_3">
+            {% if page_obj.has_previous %}
+                <p>&larr; <a href="{% url photos-list page=page_obj.previous_page_number %}">Mladší cypi</a></p>
+            {% else %}
+                <p>&larr; Mladší cypi</p>
+            {% endif %}
+        </div>
+    {% endif %}
+    {% for object in object_list %}
+        {% if object.photo %}
+            <div class="grid_3">
+                {% thumbnail object.photo "220x160" crop="center" as im %}
+                    <a href="{% url photos-detail id=object.id %}"><img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" /></a>
+                {% endthumbnail %}
+            </div>
+        {% endif %}
+    {% endfor %}
+    <div class="grid_3">
+        {% if homepage %}
+            <p><a href="{% url photos-list page=1 %}">Kompletní galerie cypů</a> &rarr;</p>
+        {% else %}
+            {% if page_obj.has_next %}
+                <p><a href="{% url photos-list page=page_obj.next_page_number %}">Starší cypi</a> &rarr;</p>
+            {% else %}
+                <p>Starší cypi &rarr;</p>
+            {% endif %}
+        {% endif %}
+    </div>
+{% else %}
+    <div class="grid_12">
+        <p><em>Solidní národ. Zatím se nenašel jediný cyp, co parkuje jak cyp.</em></p>
+    </div>
+{% endif %}
+<div class="clear"></div>

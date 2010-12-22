@@ -1,0 +1,33 @@
+mkdir projects/parkujujakcyp
+cd  projects/parkujujakcyp
+mkdir media
+mkdir media/upload
+mkvirtualenv pjc
+pip install django
+pip install pil
+django-admin.py startproject pjc
+mkdir pjc/templates
+cd pjc
+chmod +x manage.py
+
+
+prgani
+======
+upraveni admins
+vytvoreni aplikace photos
+pridani project path do settings
+konfigurace db
+time_zone, language_code
+media_root
+MEDIA_URL, ADMIN_MEDIA_PREFIX
+odkomentovani admina v installed apps (a pryc s admindoc)
+pridani zaznamu do template_dirs
+append_slash
+date_format, time_format
+
+
+upravy
+======
+kazdy nove vytvoreny projekt by mohl mit v sobe # -*- coding: utf-8 -*-
+mozna i vim direktivy?
+tests by defaultne mohl byt adresar

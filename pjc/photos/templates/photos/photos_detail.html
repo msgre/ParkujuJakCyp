@@ -1,0 +1,19 @@
+{% extends "bone.html" %}
+
+{% load thumbnail %}
+
+{% block main %}
+    {# detailni fotka #}
+    <div class="grid_12">
+        {% thumbnail object.photo "940" as im %}
+            <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" />
+        {% endthumbnail %}
+    </div>
+    <div class="clear"></div>
+
+    {# facebook like #}
+    <div class="grid_12">
+        <script src="http://connect.facebook.net/en_US/all.js#xfbml=1"></script><fb:like show_faces="true" width="940" font="verdana"></fb:like>
+    </div>
+    <div class="clear"></div>
+{% endblock %}

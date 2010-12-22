@@ -1,0 +1,23 @@
+{% extends "bone.html" %}
+
+{% load webdesign %}
+
+{% block main %}
+    {# formik #}
+    <div class="grid_6">
+        <form enctype="multipart/form-data" method="post" action="{% url homepage %}">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <input type="submit" value="Nahrat" />
+        </form>
+    </div>
+
+    {# uvodni pokec #}
+    <div class="grid_6">
+        <p>{% lorem 50 w %}</p>
+    </div>
+    <div class="clear"></div>
+
+    {# naposledy uploadnute fotky #}
+    {% include "photos/photos_block.html" %}
+{% endblock %}
