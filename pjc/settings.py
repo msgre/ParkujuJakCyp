@@ -53,7 +53,7 @@ MEDIA_ROOT = os.path.join(PROJECT_PATH, '../media/')
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash if there is a path component (optional in other cases).
 # Examples: "http://media.lawrence.com", "http://example.com/media/"
-MEDIA_URL = '/media/'
+MEDIA_URL = 'http://media.parkujujakcyp.cz/pjc/'
 
 # URL prefix for admin media -- CSS, JavaScript and images. Make sure to use a
 # trailing slash.
@@ -93,6 +93,7 @@ INSTALLED_APPS = (
     'django.contrib.webdesign',
     'sorl.thumbnail',
     'pjc.photos',
+    'django_extensions',
 )
 
 APPEND_SLASH = True
@@ -100,3 +101,5 @@ DATE_FORMAT = "j. F Y"
 TIME_FORMAT = "G.i"
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 PHOTO_UPLOAD_DIR = 'upload'
+
+from local_settings import *
